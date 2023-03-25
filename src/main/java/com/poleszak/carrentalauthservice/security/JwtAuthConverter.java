@@ -14,6 +14,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static com.poleszak.carrentalauthservice.model.Role.valueOf;
 import static java.util.Set.of;
 import static java.util.stream.Collectors.toSet;
 import static org.springframework.security.oauth2.jwt.JwtClaimNames.SUB;
@@ -54,7 +55,7 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
                 || (resource = (Map<String, Object>) resourceAccess.get(properties.getResourceId())) == null
                 || (resourceRoles = (Collection<String>) resource.get("roles")) == null) return of();
         return resourceRoles.stream()
-                .map(role -> new SimpleGrantedAuthority("ROLE_" + role))
+                .map(role -> new SimpleGrantedAuthority("ROLE_" + valueOf(role).name()))
                 .collect(toSet());
     }
 }

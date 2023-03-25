@@ -22,8 +22,10 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-                .requestMatchers(GET, "/api/v1/car-rental", "/api/v1/car-rental/**").permitAll()
-                .anyRequest().authenticated();
+                .requestMatchers(GET, "/api/v1/car-rental/public", "/api/v1/car-rental/public/**")
+                .permitAll()
+                .anyRequest()
+                .authenticated();
         http.oauth2ResourceServer()
                 .jwt()
                 .jwtAuthenticationConverter(jwtAuthConverter);
