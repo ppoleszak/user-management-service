@@ -1,63 +1,96 @@
-# Car Rental Auth Service
+[//]: # (# Car Rental Auth Service)
 
-This service is responsible for authentication of users in the Car Rental application. It uses Keycloak as an authentication server.
+[//]: # ()
+[//]: # (This service is responsible for authentication of users in the Car Rental application. It uses Keycloak as an authentication server.)
 
-## Getting Started
+[//]: # ()
+[//]: # (## Getting Started)
 
-### Prerequisites
+[//]: # ()
+[//]: # (### Prerequisites)
 
-Before running this service, make sure you have installed:
+[//]: # ()
+[//]: # (Before running this service, make sure you have installed:)
 
-- Java 17 or higher
-- Maven
-- Keycloak server
+[//]: # ()
+[//]: # (- Java 17 or higher)
 
-### Installing
+[//]: # (- Maven)
 
-1. Clone the repository:
+[//]: # (- Keycloak server)
 
-```git clone https://github.com/your_username/car-rental-auth-service.git```
+[//]: # ()
+[//]: # (### Installing)
 
+[//]: # ()
+[//]: # (1. Clone the repository:)
 
-2. Navigate to the cloned repository:
+[//]: # ()
+[//]: # (```git clone https://github.com/your_username/car-rental-auth-service.git```)
 
-```cd car-rental-auth-service```
+[//]: # ()
+[//]: # ()
+[//]: # (2. Navigate to the cloned repository:)
 
-3. Build the project:
+[//]: # ()
+[//]: # (```cd car-rental-auth-service```)
 
-```mvn clean install```
+[//]: # ()
+[//]: # (3. Build the project:)
 
-### Configuration
+[//]: # ()
+[//]: # (```mvn clean install```)
 
-Configuration of this service is done through application*.yml files, located in the `src/main/resources` directory.
+[//]: # ()
+[//]: # (### Configuration)
 
-#### `application.yml`
+[//]: # ()
+[//]: # (Configuration of this service is done through application*.yml files, located in the `src/main/resources` directory.)
 
-This file contains general configuration options for the service.
+[//]: # ()
+[//]: # (#### `application.yml`)
 
-#### `keycloak.yml`
+[//]: # ()
+[//]: # (This file contains general configuration options for the service.)
 
-This file contains configuration options for the Keycloak authentication server.
+[//]: # ()
+[//]: # (#### `keycloak.yml`)
 
-### Usage
+[//]: # ()
+[//]: # (This file contains configuration options for the Keycloak authentication server.)
 
-To use this service, make HTTP requests to the provided endpoints, with the required authentication and authorization headers.
+[//]: # ()
+[//]: # (### Usage)
 
-#### Authentication
+[//]: # ()
+[//]: # (To use this service, make HTTP requests to the provided endpoints, with the required authentication and authorization headers.)
 
-This service uses Keycloak as an authentication server. To authenticate a user, obtain a JWT access token from the Keycloak server, and include it in the `Authorization` header of each HTTP request. The token should be in the format `Bearer <access_token>`.
+[//]: # ()
+[//]: # (#### Authentication)
 
-#### Authorization
+[//]: # ()
+[//]: # (This service uses Keycloak as an authentication server. To authenticate a user, obtain a JWT access token from the Keycloak server, and include it in the `Authorization` header of each HTTP request. The token should be in the format `Bearer <access_token>`.)
 
-This service uses Spring Security for authorization. To access certain endpoints, a user must have the required role(s) specified in the table above. The role(s) should be included in the `Authorization` header of each HTTP request, in the format `Bearer <access_token>`. The JWT access token obtained from the Keycloak server contains the required role information.
+[//]: # ()
+[//]: # (#### Authorization)
 
-### Built With
+[//]: # ()
+[//]: # (This service uses Spring Security for authorization. To access certain endpoints, a user must have the required role&#40;s&#41; specified in the table above. The role&#40;s&#41; should be included in the `Authorization` header of each HTTP request, in the format `Bearer <access_token>`. The JWT access token obtained from the Keycloak server contains the required role information.)
 
-- [Spring Boot](https://spring.io/projects/spring-boot) - Framework for building Spring applications
-- [Spring Security](https://spring.io/projects/spring-security) - Framework for authentication and authorization
-- [Keycloak](https://www.keycloak.org/) - Open source authentication server
-- [Maven](https://maven.apache.org/) - Build automation tool
+[//]: # ()
+[//]: # (### Built With)
 
-### Authors
+[//]: # ()
+[//]: # (- [Spring Boot]&#40;https://spring.io/projects/spring-boot&#41; - Framework for building Spring applications)
 
-- Piotrek Poleszak - Initial work - poleszak@proton.me
+[//]: # (- [Spring Security]&#40;https://spring.io/projects/spring-security&#41; - Framework for authentication and authorization)
+
+[//]: # (- [Keycloak]&#40;https://www.keycloak.org/&#41; - Open source authentication server)
+
+[//]: # (- [Maven]&#40;https://maven.apache.org/&#41; - Build automation tool)
+
+[//]: # ()
+[//]: # (### Authors)
+
+[//]: # ()
+[//]: # (- Piotrek Poleszak - Initial work - poleszak@proton.me)
