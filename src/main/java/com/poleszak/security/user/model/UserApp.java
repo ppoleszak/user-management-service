@@ -1,27 +1,38 @@
 package com.poleszak.security.user.model;
 
+import com.poleszak.security.user.role.Role;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import static jakarta.persistence.GenerationType.SEQUENCE;
+import static jakarta.persistence.EnumType.STRING;
+
 
 @Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-public class UserApp {
+@EqualsAndHashCode(callSuper = true)
+public class UserApp extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "user_app_id_sequence")
-    @SequenceGenerator(name = "user_app_id_sequence", sequenceName = "user_app_id_sequence")
-    private Integer id;
+    @Column(nullable = false)
     private String firstName;
+
+    @Column(nullable = false)
     private String lastName;
+
+    @Column(nullable = false)
     private String email;
+
+    @Column(nullable = false)
     private String password;
+
+    @Enumerated(STRING)
+    @Column(nullable = false)
+    private Role role;
 }
+
