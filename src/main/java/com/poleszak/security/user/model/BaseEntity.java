@@ -36,4 +36,8 @@ public abstract class BaseEntity {
     protected void onUpdate() {
         modifiedDate = now();
     }
+
+    public boolean isDeleted() {
+        return deletedDate != null;
+    }
 }
