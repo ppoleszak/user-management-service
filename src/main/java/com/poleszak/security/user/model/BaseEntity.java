@@ -3,10 +3,11 @@ package com.poleszak.security.user.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
-import static jakarta.persistence.GenerationType.SEQUENCE;
 import static java.time.LocalDateTime.now;
 
 @Getter
@@ -15,9 +16,10 @@ import static java.time.LocalDateTime.now;
 public abstract class BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "entity_id_sequence")
-    @SequenceGenerator(name = "entity_id_sequence", sequenceName = "entity_id_sequence")
-    private Integer id;
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(name = "id", updatable = false, nullable = false)
+    private UUID id;
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdDate;
@@ -35,9 +37,5 @@ public abstract class BaseEntity {
     @PreUpdate
     protected void onUpdate() {
         modifiedDate = now();
-    }
-
-    public boolean isDeleted() {
-        return deletedDate != null;
     }
 }

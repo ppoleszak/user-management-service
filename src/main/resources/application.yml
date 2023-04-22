@@ -13,3 +13,11 @@ spring:
         format_sql: true
     database: postgresql
     databasePlatform: org.hibernate.dialect.PostgreSQLDialect
+argon2:
+  saltLength: 16
+  hashLength: 32
+  parallelism: 1
+  memory: 65536
+  iterations: 5
+jwt:
+  secret-key=7538782F413F442A472D4B6150645367566B59703373367639792442264529482B4D6251655468576D5A7134743777217A25432A462D4A614E635266556A586E:

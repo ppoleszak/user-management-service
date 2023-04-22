@@ -2,6 +2,7 @@ package com.poleszak.security.config.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,8 @@ import static io.jsonwebtoken.security.Keys.hmacShaKeyFor;
 @Service
 public class JwtService {
 
-    private static final String SECRET_KEY = "7538782F413F442A472D4B6150645367566B59703373367639792442264529482B4D6251655468576D5A7134743777217A25432A462D4A614E635266556A586E";//TODO: Move value to config file;
+    @Value("${jwt.secret-key}")
+    private String secretKey;
 
     public String extractUsername(String jwtToken) {
         return extractClaim(jwtToken, Claims::getSubject);
@@ -39,7 +41,7 @@ public class JwtService {
                 .setClaims(claims)
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 30))
                 .signWith(getSignInKey(), HS512)
                 .compact();
     }
@@ -67,7 +69,7 @@ public class JwtService {
     }
 
     private Key getSignInKey() {
-        byte[] keyBytes = BASE64.decode(SECRET_KEY);
+        byte[] keyBytes = BASE64.decode(secretKey);
         return hmacShaKeyFor(keyBytes);
     }
 }
