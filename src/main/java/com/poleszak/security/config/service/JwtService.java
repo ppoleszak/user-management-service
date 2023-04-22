@@ -3,6 +3,7 @@ package com.poleszak.security.config.service;
 import com.poleszak.security.user.model.UserApp;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.security.Key;
@@ -39,9 +40,9 @@ public class JwtService {
                 .compact();
     }
 
-    public boolean isTokenValid(String jwtToken, UserApp userApp) {
+    public boolean isTokenValid(String jwtToken, UserDetails userDetails) {
         final String username = extractUsername(jwtToken);
-        return (username.equals(userApp.getUsername())) && !isTokenExpired(jwtToken);
+        return (username.equals(userDetails.getUsername())) && !isTokenExpired(jwtToken);
     }
 
     private boolean isTokenExpired(String jwtToken) {
