@@ -1,6 +1,5 @@
 package com.poleszak.security.config.service;
 
-import com.poleszak.security.user.model.UserApp;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.security.Key;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
@@ -29,11 +29,15 @@ public class JwtService {
         return claimsResolver.apply(claims);
     }
 
-    public String generateToken(Map<String, Object> claims, UserApp userApp) {
+    public String generateToken(UserDetails userDetails) {
+        return generateToken(new HashMap<>(), userDetails);
+    }
+
+    public String generateToken(Map<String, Object> claims, UserDetails userDetails) {
         return Jwts.
                 builder()
                 .setClaims(claims)
-                .setSubject(userApp.getUsername())
+                .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 24))
                 .signWith(getSignInKey(), HS512)
