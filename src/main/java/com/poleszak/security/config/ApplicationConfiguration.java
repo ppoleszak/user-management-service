@@ -1,4 +1,4 @@
-package com.poleszak.security.config.configuration;
+package com.poleszak.security.config;
 
 import com.poleszak.security.user.repository.UserAppRepository;
 import lombok.RequiredArgsConstructor;
