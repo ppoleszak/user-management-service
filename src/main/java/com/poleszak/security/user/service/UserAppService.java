@@ -1,6 +1,6 @@
 package com.poleszak.security.user.service;
 
-import com.poleszak.jwt.service.UserDetailsService;
+import com.poleszak.jwtauthspring.service.UserDetailsService;
 import com.poleszak.security.user.repository.UserAppRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;

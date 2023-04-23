@@ -75,7 +75,7 @@
         </dependency>
         <dependency>
             <groupId>com.poleszak</groupId>
-            <artifactId>jwt</artifactId>
+            <artifactId>jwt-auth-spring</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

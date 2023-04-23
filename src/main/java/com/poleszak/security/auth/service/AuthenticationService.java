@@ -1,6 +1,6 @@
 package com.poleszak.security.auth.service;
 
-import com.poleszak.jwt.service.JwtService;
+import com.poleszak.jwtauthspring.service.JwtService;
 import com.poleszak.security.auth.request.AuthenticationRequest;
 import com.poleszak.security.auth.request.RegisterRequest;
 import com.poleszak.security.auth.response.AuthenticationResponse;
