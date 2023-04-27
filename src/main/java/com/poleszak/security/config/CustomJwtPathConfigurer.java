@@ -3,21 +3,21 @@ package com.poleszak.security.config;
 
 import com.poleszak.jwtauthspring.config.JwtPathConfigurer;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.security.config.web.server.ServerHttpSecurity;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 
 
-@Component
+@Configuration
 @ComponentScan(basePackages = "com.poleszak.jwtauthspring")
 public class CustomJwtPathConfigurer implements JwtPathConfigurer {
 
     @Override
-    public void configure(ServerHttpSecurity http) {
+    public void configure(HttpSecurity http) throws Exception {
         http
-                .authorizeExchange()
-                .pathMatchers("/api/v1/auth/**")
+                .authorizeHttpRequests()
+                .requestMatchers("/api/v1/auth/**")
                 .permitAll()
-                .anyExchange()
+                .anyRequest()
                 .authenticated();
     }
 }
