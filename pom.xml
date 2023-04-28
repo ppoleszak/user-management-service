@@ -45,11 +45,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk15on</artifactId>
-            <version>1.70</version>
-        </dependency>
-        <dependency>
             <groupId>com.poleszak</groupId>
             <artifactId>jwt-auth-spring</artifactId>
             <version>0.0.1-SNAPSHOT</version>

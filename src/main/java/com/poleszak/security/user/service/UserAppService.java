@@ -1,6 +1,6 @@
 package com.poleszak.security.user.service;
 
-import com.poleszak.jwtauthspring.service.UserDetailsService;
+import com.poleszak.jwtauthspring.service.UserDetailsProvider;
 import com.poleszak.security.user.repository.UserAppRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UserAppService implements UserDetailsService {
+public class UserAppService implements UserDetailsProvider {
 
     private final UserAppRepository userAppRepository;
 
