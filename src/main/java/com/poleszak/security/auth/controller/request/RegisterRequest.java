@@ -1,4 +1,4 @@
-package com.poleszak.security.auth.request;
+package com.poleszak.security.auth.controller.request;
 
 import com.poleszak.security.user.role.Role;
 

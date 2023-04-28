@@ -1,4 +1,4 @@
-package com.poleszak.security.auth.request;
+package com.poleszak.security.auth.controller.request;
 
 public record AuthenticationRequest(
         String email,

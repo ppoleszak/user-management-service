@@ -1,4 +1,4 @@
-package com.poleszak.security.auth.response;
+package com.poleszak.security.auth.controller.response;
 
 public record AuthenticationResponse(String token) {
 }

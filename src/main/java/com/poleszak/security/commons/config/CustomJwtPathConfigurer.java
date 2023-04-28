@@ -1,11 +1,9 @@
-package com.poleszak.security.config;
-
+package com.poleszak.security.commons.config;
 
 import com.poleszak.jwtauthspring.config.JwtPathConfigurer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-
 
 @Configuration
 @ComponentScan(basePackages = "com.poleszak.jwtauthspring")
@@ -21,4 +19,3 @@ public class CustomJwtPathConfigurer implements JwtPathConfigurer {
                 .authenticated();
     }
 }
-
