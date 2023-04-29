@@ -1,12 +1,12 @@
-package com.poleszak.security.auth.service;
+package com.poleszak.usermanagementservice.auth.service;
 
 import com.poleszak.jwtauthspring.service.JwtService;
-import com.poleszak.security.auth.controller.request.AuthenticationRequest;
-import com.poleszak.security.auth.controller.request.RegisterRequest;
-import com.poleszak.security.auth.controller.response.AuthenticationResponse;
-import com.poleszak.security.user.model.UserApp;
-import com.poleszak.security.user.repository.UserAppRepository;
-import com.poleszak.security.user.service.UserAppService;
+import com.poleszak.usermanagementservice.auth.controller.request.AuthenticationRequest;
+import com.poleszak.usermanagementservice.auth.controller.request.RegisterRequest;
+import com.poleszak.usermanagementservice.auth.controller.response.AuthenticationResponse;
+import com.poleszak.usermanagementservice.user.model.UserApp;
+import com.poleszak.usermanagementservice.user.repository.UserAppRepository;
+import com.poleszak.usermanagementservice.user.service.UserAppService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

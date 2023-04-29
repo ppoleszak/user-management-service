@@ -1,6 +1,6 @@
-package com.poleszak.security.user.model;
+package com.poleszak.usermanagementservice.user.model;
 
-import com.poleszak.security.user.role.Role;
+import com.poleszak.usermanagementservice.user.role.Role;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Enumerated;

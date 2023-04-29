@@ -1,10 +1,10 @@
-package com.poleszak.security.commons.provider;
+package com.poleszak.usermanagementservice.commons.provider;
 
+import com.poleszak.jwtauthspring.filter.model.UserAppDto;
 import com.poleszak.jwtauthspring.service.UserDetailsProvider;
-import com.poleszak.security.user.service.UserAppService;
+import com.poleszak.usermanagementservice.user.service.UserAppService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 @Configuration
@@ -14,7 +14,7 @@ public class UserDetailsProviderImpl implements UserDetailsProvider {
     private final UserAppService userAppService;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userAppService.loadByUsername(username);
+    public UserAppDto loadUserByUsername(String username, String jwtToken) throws UsernameNotFoundException {
+        return userAppService.loadUserAppDtoByUsername(username);
     }
 }

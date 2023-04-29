@@ -1,4 +1,4 @@
-package com.poleszak.security.user.model;
+package com.poleszak.usermanagementservice.user.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;

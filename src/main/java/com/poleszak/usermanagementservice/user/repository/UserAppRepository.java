@@ -1,6 +1,6 @@
-package com.poleszak.security.user.repository;
+package com.poleszak.usermanagementservice.user.repository;
 
-import com.poleszak.security.user.model.UserApp;
+import com.poleszak.usermanagementservice.user.model.UserApp;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

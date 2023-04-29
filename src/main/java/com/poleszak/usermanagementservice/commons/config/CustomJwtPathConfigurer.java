@@ -1,4 +1,4 @@
-package com.poleszak.security.commons.config;
+package com.poleszak.usermanagementservice.commons.config;
 
 import com.poleszak.jwtauthspring.config.JwtPathConfigurer;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,7 +13,7 @@ public class CustomJwtPathConfigurer implements JwtPathConfigurer {
     public void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests()
-                .requestMatchers("/api/v1/auth/**")
+                .requestMatchers("/api/v1/auth/**", "/api/v1/user/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated();

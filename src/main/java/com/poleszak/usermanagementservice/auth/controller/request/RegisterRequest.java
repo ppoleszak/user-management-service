@@ -1,6 +1,6 @@
-package com.poleszak.security.auth.controller.request;
+package com.poleszak.usermanagementservice.auth.controller.request;
 
-import com.poleszak.security.user.role.Role;
+import com.poleszak.usermanagementservice.user.role.Role;
 
 public record RegisterRequest(
         String firstName,

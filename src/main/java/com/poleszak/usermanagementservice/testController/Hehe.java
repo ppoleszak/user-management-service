@@ -1,4 +1,4 @@
-package com.poleszak.security.testController;
+package com.poleszak.usermanagementservice.testController;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;

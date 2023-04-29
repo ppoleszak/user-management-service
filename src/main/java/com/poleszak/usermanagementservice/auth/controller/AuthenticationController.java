@@ -1,9 +1,9 @@
-package com.poleszak.security.auth.controller;
+package com.poleszak.usermanagementservice.auth.controller;
 
-import com.poleszak.security.auth.controller.request.AuthenticationRequest;
-import com.poleszak.security.auth.controller.request.RegisterRequest;
-import com.poleszak.security.auth.controller.response.AuthenticationResponse;
-import com.poleszak.security.auth.service.AuthenticationService;
+import com.poleszak.usermanagementservice.auth.controller.request.AuthenticationRequest;
+import com.poleszak.usermanagementservice.auth.controller.request.RegisterRequest;
+import com.poleszak.usermanagementservice.auth.controller.response.AuthenticationResponse;
+import com.poleszak.usermanagementservice.auth.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
