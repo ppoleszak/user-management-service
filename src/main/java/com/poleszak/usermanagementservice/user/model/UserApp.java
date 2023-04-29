@@ -1,6 +1,6 @@
 package com.poleszak.usermanagementservice.user.model;
 
-import com.poleszak.usermanagementservice.user.role.Role;
+import com.poleszak.jwtauthspring.filter.model.Role;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Enumerated;

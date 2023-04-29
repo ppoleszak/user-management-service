@@ -35,7 +35,7 @@ public class UserAppService {
         userAppDto.setLastName(userApp.getLastName());
         userAppDto.setEmail(userApp.getEmail());
         userAppDto.setPassword(userApp.getPassword());
-        userAppDto.setRole(userApp.getRole().name());
+        userAppDto.setRole(userApp.getRole());
 
         List<SimpleGrantedAuthorityDto> authorities = userApp.getAuthorities().stream()
                 .map(authority -> {
